@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+        <title>Javascript Functions</title>
+		
+
+		
+		<script>
+		
+		
+				/* Basic match functions */
+				function add ( a, b ) { 
+                     return a + b;
+                };
+				function sub ( a, b ) { 
+                     return a - b;
+                };
+				function mul ( a, b ) { 
+                     return a * b;
+                };
+				function div ( a, b ) { 
+                    return a / b;
+                };
+				function square(a){
+					return a * a;
+				};
+				
+				/* this function will show the result on element with id = result */
+				function showResult(result){				
+					document.getElementById('result').innerHTML = isNaN(result) ? 'Please enter valid numbers' : result;
+				};
+				
+				
+				/* click handlers for various buttons */
+				function onBtnAddClick (){					
+					console.log("Control is in Add Button click handler");
+					var num1 = parseInt(document.getElementById("num1").value);
+					var num2 = parseInt(document.getElementById("num2").value);
+					var result = add(num1,num2);
+					showResult(result);
+				};
+				function onBtnSubClick (){
+					console.log("Control is in Sub Button click handler");
+					var num1 = parseInt(document.getElementById("num1").value);
+					var num2 = parseInt(document.getElementById("num2").value);
+					var result = sub(num1,num2);
+					showResult(result);
+				};
+				function onBtnMulClick (){
+					console.log("Control is in Mul Button click handler");
+					var num1 = parseInt(document.getElementById("num1").value);
+					var num2 = parseInt(document.getElementById("num2").value);
+					var result = mul(num1,num2);
+					showResult(result);
+				};
+				function onBtnDivClick (){
+					console.log("Control is in Div Button click handler");
+					var num1 = parseInt(document.getElementById("num1").value);
+					var num2 = parseInt(document.getElementById("num2").value);
+					var result = div(num1,num2);
+					showResult(result);				
+				};
+				function onBtnSquareClick (){
+					console.log("Control is in Square Button click handler");
+					var num1 = parseInt(document.getElementById("num1").value);					
+					var result = square(num1);
+					showResult(result);
+				};               
+			
+		</script>
+
+</head>
+
+<body>
+
+		
+	<h1>Enter Input Values </h1>
+	
+	<label>Enter Number <input type="text" id="num1" placeholder="123456"></label>
+	<br><br>
+	<label>Enter Number <input type="text" id="num2" placeholder="123456"></label>
+	
+	<br><br>
+	
+	<button id="square" onclick="onBtnSquareClick();">Square</button>
+	<button id="add" onclick="onBtnAddClick();">Add</button>
+	<button id="mul" onclick="onBtnMulClick();">Mul</button>
+	<button id="div" onclick="onBtnDivClick();">Div</button>
+	
+	<br><br>
+	<h1 style="text-align:center">Result ... !</h1>
+	<h1 style="text-align:center" id="result"></h1>
+
+</body>
+
+</html>

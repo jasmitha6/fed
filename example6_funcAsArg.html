@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+        <title>Javascript Functions</title>
+</head>
+
+<body>
+
+		<p>Lorem ipsum dolor sit amet, at usu audire torquatos, eum ut populo equidem periculis. Ad homero delicata vis. Libris suavitate te has, eos at iisque senserit. Ubique propriae facilisis eu pro, ea dicta alienum definitiones per, natum erroribus maiestatis his ei. Ad mel elit detracto definitiones, ex integre prodesset quo.
+
+Ex mel nihil definitiones, nisl offendit ex sed. An est sensibus consulatu. Postea labore eu duo. Mucius denique mei ex. Nominati conceptam disputando mea in, omnis imperdiet concludaturque duo no.
+
+An viris deserunt vim, convenire suscipiantur sea no. Postea utroque hendrerit ne nec, ei mazim nominavi nam. Civibus invidunt sed in, delicata instructior nec ut. Ei causae antiopam laboramus vis, te vix ponderum partiendo, his eu deleniti assentior. Nec ferri apeirian senserit an, sed minimum percipitur ut. Sea brute lucilius deserunt ne, ipsum electram vix ad.
+
+</p>
+	
+	<script>
+		
+		
+			function iNeedParameter(paramFunc) {
+			   //it is a good idea to check if the parameter is actually not null
+			   //and that it is a function
+			   if (paramFunc && (typeof paramFunc == "function")) {
+				  paramFunc();   
+			   }
+			}
+
+			//this calls iNeedParameter and sends the other function to it
+			iNeedParameter(function(){
+			  alert("I was called");
+			}); 
+
+
+	</script>
+	
+	
+
+	
+</body>
+
+</html>
