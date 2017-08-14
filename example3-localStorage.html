@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<!-- Defines the character encoding -->
+		<meta charset="UTF-8">
+		
+        <title>HTML5 LocalStorage</title>
+		<script>
+	
+			function saveInLocalStorage(){
+			
+				if (typeof(Storage) !== "undefined") {
+					var name = document.getElementById('name').value;
+					// Store
+					localStorage.setItem("name", name);
+					getNameFromLocalStorage();
+				} else {
+					alert("Sorry! No Web Storage support..");
+				}
+				
+			};
+			
+			function getNameFromLocalStorage(){
+				if (typeof(Storage) !== "undefined") {
+					var name = localStorage.getItem("name");
+					if(name)
+						document.getElementById('savedNameLabel').innerHTML = "You saved name is " + name;
+					else
+						document.getElementById('savedNameLabel').innerHTML = "No name in local storage ..!";
+					
+				}		
+			};
+			function deleteInLocalStorage(){
+				localStorage.removeItem("name");
+				getNameFromLocalStorage(); // This will refresh the greeting 
+			}
+	
+	</script>
+		
+</head>
+
+<body onload="getNameFromLocalStorage();">
+
+	<div>
+		
+		<h1>Enter your Name</h1>
+		<input id="name">
+
+		<button onclick="saveInLocalStorage();">Save Locally</button>
+		<button onclick="deleteInLocalStorage();">Delete</button>
+		
+	</div>
+	
+	<h1 id="savedNameLabel" style="text-align:center;">No name in local storage ..!</h1>
+	
+	
+	
+
+</body>
+
+</html>
